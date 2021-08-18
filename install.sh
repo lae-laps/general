@@ -9,8 +9,8 @@ git clone https://github.com/hangetzzu/saycheese
 git clone https://github.com/Darkmux/SETSMS
 git clone https://github.com/sherlock-project/sherlock
 wget -qnc https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
-sudo dpkg -i nordvpn-release_1.0.0_all.deb
-sudo apt update
+sudo -p $password dpkg -i nordvpn-release_1.0.0_all.deb
+sudo -p $password apt update
 rm nordvpn-release_1.0.0_all.deb
 sudo -p $password apt install nordvpn
 sudo -p $password apt install neofetch

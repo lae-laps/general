@@ -1,16 +1,27 @@
-read -p "password for root: " password
-mkdir tools
-cd tools
-git clone https://github.com/HACK3RY2J/Anon-SMS
-git clone https://github.com/umeshshinde19/instainsane
-git clone https://github.com/htr-tech/nexphisher
-git clone https://github.com/opsdisk/pagodo
-git clone https://github.com/hangetzzu/saycheese
-git clone https://github.com/Darkmux/SETSMS
-git clone https://github.com/sherlock-project/sherlock
-wget -qnc https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
-sudo -p $password dpkg -i nordvpn-release_1.0.0_all.deb
-sudo -p $password apt update
-rm nordvpn-release_1.0.0_all.deb
-sudo -p $password apt install nordvpn
-sudo -p $password apt install neofetch
+#!/bin/bash
+# Sherlock Server installer
+
+# Make sure the installer is launched by root or sudoer
+if ((\`id -u\` != 0))
+then
+  echo 'Please run installer as root or sudo it!'
+  exit
+fi
+
+ufw allow 'OpenSSH'
+apt update
+apt upgrade
+apt -y install net-tools
+apt -y install figlet
+apt -y install neofetch
+apt -y install openjdk-8-jdk
+apt -y install apache2
+# Install apache server
+ufw allow 'Apache'
+ufw enable
+apt -y install postgresql
+cd
+echo "neofetch" >> .bashrc
+echo "figlet sherlock-server" >> .bashrc 
+echo "`hostname`" >> .bashrc
+echo "PS1="\033[38;5;118m`whoami`@`hostname`\033[m\033[38;5;202m ~\033[m\033[38;5;118m>\033[m \[\e[0m\]"" >> .basrc

@@ -1,6 +1,3 @@
-#Code by hashes
-#Modified by Laelaps
-
 import os
 
 os.system("pip3 install requests shodan colorama bs4 html5lib sty alive-progress")   

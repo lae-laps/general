@@ -1,3 +1,5 @@
+# x86 syntax for linux kernel system call to exit with status  0
+
 .section .data
 .section .text
 .globl __start
